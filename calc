@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [[ -n $1 ]]; then
+	INPUT_STRING=$1
+else
+	read -p "> " INPUT_STRING
+fi
+
+echo "tmp=$INPUT_STRING;print(tmp)" | xargs --max-args 1 --null python3 -c
